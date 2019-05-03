@@ -9,6 +9,7 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
 import server.handlers.HeadHandler
 import server.handlers.ImageResourceHandler
+import server.handlers.PageHandler
 import server.handlers.PostHandler
 import server.handlers.TextResourceHandler
 
@@ -20,6 +21,9 @@ class RoutingConfig {
 
     @Autowired
     lateinit var imageResourceHandler: ImageResourceHandler
+
+    @Autowired
+    lateinit var pageHandler: PageHandler
 
     @Autowired
     lateinit var headHandler: HeadHandler
@@ -34,6 +38,7 @@ class RoutingConfig {
     fun routes(): RouterFunction<ServerResponse> = router {
         GET("/text/*") { textResourceHandler.handle(it) }
         GET("/img/*") { imageResourceHandler.handle(it) }
+        GET("/pages/**") { pageHandler.handle(it) }
         HEAD("{*}") { headHandler.handle(it) }
         POST("{*}") { postHandler.handle(it) }
     }.filter { request, next ->
