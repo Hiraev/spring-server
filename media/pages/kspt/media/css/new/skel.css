@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+/* шапка */
+
+#headline {
+    border-bottom: 1px solid black;
+    background-color: #e3e5e8;
+}
+
+#headline-left {
+    width: 427px;
+    height: 131px;
+    background-image: url("/media/image/header01.jpg");
+    background-repeat: no-repeat;
+}
+
+#headline-right {
+    float: right;
+    width: 425px;
+    height: 131px;
+    background-image: url("/media/image/header04.jpg");
+    background-repeat: no-repeat;
+    margin-right: 3%;
+}
+
+#logo {
+    padding: 11% 0 0 10%;
+}
+
+/* основное содержимое */
+
+#content-main, #content-wide {
+    padding: 0 0.5em;
+}
+
+#content-wide {
+    clear: both;
+}
+
+#content-main {
+    float: left;
+    width: 72%;
+    margin: 0;
+    padding: 0;
+}
+
+#content-related {
+    float:right;
+    padding: 0 2% 0 1%;
+    width: 24%;
+    margin: 0;
+}
+
+/* подвал */
+
+#footline {
+    min-height: 80px;
+    font-size: small;
+    background: #e3e5e8 url("/media/image/bottom02.jpg") no-repeat right top;
+    border-top: 1px solid black;
+    margin-top: 2em;
+}
+
+#footline .footer {
+    min-width: 200px;
+    height: 60px;
+    background: url("/media/image/bottom01.jpg") no-repeat left top;
+    padding: 10px;
+    margin: 0;
+}
+
+#footline .vcard {
+    background: transparent;
+    border: none !important;
+    min-height: 0;
+}
+
+#footline .aside {
+    float: right;
+    background-color: #f3f5f8;
+    padding: 0.5em;
+    border: 1px solid #c3c5c8;
+    margin: 1em;
+}
+
+#footline .aside h2 {
+    display: none;
+}
+
+#footline .aside p {
+    margin: 0.5em 0;
+}
+
+#footline .aside ul {
+    padding-left: 1em;
+}
+
+/* меню */
+
+#menu {
+    float: right;
+    font-size: small;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0.5em;
+    margin: 0;
+    text-transform: lowercase;
+}
+
+#menu li {
+    display: block;
+    float: left;
+    padding: 0.2em 0.5em;
+    color: white;
+    background-color: #888;
+    margin: 0.2em;
+    font-weight: bold;
+}
+
+#menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu li:hover {
+    background-color: #008256;
+}
+
+#menu .active {
+    background-color: #c0242c;
+}
+
+#menu:hover .active {
+    background-color: #c0242c;
+}
+
+/* путь меню */
+
+#menupath {
+    font-size: smaller;
+    margin: 0.5em 0 0 1em;
+}
+
+/* боковое меню */
+
+#sidemenu.nav {
+    background: #f3f5f8;
+    padding: 1em;
+    border: 1px solid #d3d5d8;
+    margin: 1em 0;
+}
+
+#sidemenu.nav h2 {
+    display: none;
+}
+
+#sidemenu.nav ul {
+    list-style: none;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+
+#sidemenu.nav ul ul {
+    line-height: 1.3em;
+    padding: 0 0 0 2em;
+    margin: 0;
+}
+
+#sidemenu.nav ul li {
+    font-weight: bold;
+}
+
+#sidemenu.nav ul ul li {
+    font-weight: normal;
+    font-size: smaller;
+}
+

@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* DEBUG: form styling test, see <http://jeffhowden.com/code/css/forms/> */
+
+.form {
+    background: #ddd;
+    padding: 0.3em;
+}
+
+.inline-field {
+    float: left;
+    margin-right: 0.3em;
+}
+
+form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+fieldset, form p, legend {
+    margin: 0 0 0.5em 0;
+}
+
+legend {
+    padding: 0;
+}
+
+input[type='radio'], input[type='checkbox'], input[type='submit'] {
+    width: auto;
+}
+
+.required legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.optional label {
+  font-weight: normal;
+}
+
+.required label:before {
+    content: "* ";
+    color: red;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 1px 3px;
+  margin: 0 0 0 0;
+}
+
+.submit input {
+    width: auto;
+}
+
+select {
+  width: 20em;
+  padding: 1px 3px;
+}
+
+.inline-field select {
+    width: 100%;
+}
+
+form .note {
+    font-size: smaller;
+}
+
