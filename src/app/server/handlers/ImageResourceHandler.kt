@@ -1,5 +1,6 @@
 package server.handlers
 
+import org.springframework.scheduling.annotation.Async
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
@@ -11,7 +12,7 @@ import server.readFile
 class ImageResourceHandler : Handler {
     override fun handle(request: ServerRequest): Mono<ServerResponse> {
         return ok()
-                .header("Content-Type", "image/png")
+                .header("Content-Type", "image/jpg")
                 .body(readFile(request.path()), ByteArray::class.java)
     }
 }

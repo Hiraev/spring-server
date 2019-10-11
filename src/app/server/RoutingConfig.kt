@@ -7,40 +7,20 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.server.RouterFunction
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
-import server.handlers.HeadHandler
 import server.handlers.ImageResourceHandler
-import server.handlers.PageHandler
-import server.handlers.PostHandler
-import server.handlers.TextResourceHandler
 
 @Configuration
 class RoutingConfig {
 
     @Autowired
-    lateinit var textResourceHandler: TextResourceHandler
+    lateinit var logger: Logger
 
     @Autowired
     lateinit var imageResourceHandler: ImageResourceHandler
 
-    @Autowired
-    lateinit var pageHandler: PageHandler
-
-    @Autowired
-    lateinit var headHandler: HeadHandler
-
-    @Autowired
-    lateinit var postHandler: PostHandler
-
-    @Autowired
-    lateinit var logger: Logger
-
     @Bean
     fun routes(): RouterFunction<ServerResponse> = router {
-        GET("/text/*") { textResourceHandler.handle(it) }
-        GET("/img/*") { imageResourceHandler.handle(it) }
-        GET("/pages/**") { pageHandler.handle(it) }
-        HEAD("{*}") { headHandler.handle(it) }
-        POST("{*}") { postHandler.handle(it) }
+        GET("/img/**") { imageResourceHandler.handle(it) }
     }.filter { request, next ->
 
         logger.info("${request.method()} ${request.path()}")
@@ -54,4 +34,5 @@ class RoutingConfig {
         }
 
     }
+
 }
